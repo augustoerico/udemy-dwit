@@ -1,0 +1,28 @@
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+    "title": "Do other thing",
+    "description": "Do that other thing"
+}
+
+###
+
+http://localhost:3000/tasks
+
+###
+
+http://localhost:3000/tasks/65429d90-2721-11ea-808a-13ca6d334aae
+
+###
+
+POST http://localhost:3000/tasks/3b558df0-2724-11ea-9461-710cc79d6574
+Content-Type: application/json
+
+{
+    "status": "IN PROGRESS"
+}
+
+###
+
+DELETE http://localhost:3000/tasks/73b8a960-2720-11ea-9bb3-33baede90335
