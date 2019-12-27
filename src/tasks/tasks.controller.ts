@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task } from './task.model';
 import { CreateDto } from './dto/create.dto';
 import { UpdateDto } from './dto/update.dto';
+import { FilterDto } from './dto/filter.dto';
 
 @Controller('tasks')
 export class TasksController {
@@ -19,7 +20,7 @@ export class TasksController {
     }
 
     @Get()
-    readMany(): Task[] {
+    readMany(@Query() filter: FilterDto): Task[] {
         return this.tasksService.readMany();
     }
 

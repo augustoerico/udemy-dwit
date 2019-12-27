@@ -3,6 +3,7 @@ import { Task, Status } from './task.model';
 import * as uuid from 'uuid/v1';
 import { CreateDto } from './dto/create.dto';
 import { UpdateDto } from './dto/update.dto';
+import { FilterDto } from './dto/filter.dto';
 
 @Injectable()
 export class TasksService {
@@ -25,7 +26,7 @@ export class TasksService {
         return this.tasks.find(i => i.id === id);
     }
 
-    readMany() {
+    readMany(_: FilterDto = null) {
         return this.tasks;
     }
 
